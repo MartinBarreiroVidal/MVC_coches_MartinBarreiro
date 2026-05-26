@@ -31,6 +31,7 @@ public class Controller {
                     miView.muestraVelocidad(matricula, miModel.getVelocidad(matricula));
                 } else {
                     System.out.println("No existe ningun coche con esa matricula.");
+
                 }
 
             } else if (opcion == 3) {
