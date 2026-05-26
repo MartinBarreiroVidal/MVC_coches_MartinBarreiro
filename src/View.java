@@ -5,6 +5,7 @@ import java.util.Scanner;
  */
 public class View {
 
+    /** Scanner para leer lo que escribe el usuario. */
     Scanner scanner = new Scanner(System.in);
 
     /**
@@ -16,14 +17,14 @@ public class View {
         System.out.println("1. Crear coche");
         System.out.println("2. Mostrar velocidad");
         System.out.println("3. Avanzar");
-        System.out.println("4. Poner gasolina");
+        System.out.println("4. Cargar gasolina");
         System.out.println("5. Salir");
         System.out.print("Elige una opcion: ");
         return Integer.parseInt(scanner.nextLine());
     }
 
     /**
-     * Pide al usuario los datos necesarios para crear un coche.
+     * Pide al usuario los datos para crear un coche.
      * @return array con [0]=modelo y [1]=matricula
      */
     public String[] pedirDatosCoche() {
@@ -53,11 +54,11 @@ public class View {
     }
 
     /**
-     * Pide al usuario los litros que quiere poner.
+     * Pide al usuario los litros que quiere cargar.
      * @return litros introducidos como int
      */
     public int pedirLitros() {
-        System.out.print("Litros a añadir: ");
+        System.out.print("Litros a cargar: ");
         return Integer.parseInt(scanner.nextLine());
     }
 
@@ -68,7 +69,7 @@ public class View {
      * @return true si se ha mostrado correctamente
      */
     public boolean muestraVelocidad(String matricula, Integer v) {
-        System.out.println(matricula + ": " + v + " km/hr");
+        System.out.println(matricula + ": " + v + " km/h");
         return true;
     }
 

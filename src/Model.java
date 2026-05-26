@@ -55,14 +55,21 @@ public class Model {
     }
 
     /**
-     * Suma metros al contador de kilómetros del coche.
+     * Suma metros al contador del coche y descuenta gasolina según la velocidad.
+     * El consumo se calcula como: metros * velocidad / 10000.
      * @param matricula matrícula del coche
-     * @param metros metros a añadir
+     * @param metros metros a avanzar
      * @return total de metros acumulados
      */
     public int avanzar(String matricula, int metros) {
-        getCoche(matricula).metros += metros;
-        return getCoche(matricula).metros;
+        Coche c = getCoche(matricula);
+        // acumulamos los metros recorridos
+        c.metros += metros;
+        // calculamos el consumo usando la velocidad actual
+        int consumo = metros * c.velocidad / 10000;
+        // descontamos la gasolina consumida
+        c.gasolina -= consumo;
+        return c.metros;
     }
 
     /**

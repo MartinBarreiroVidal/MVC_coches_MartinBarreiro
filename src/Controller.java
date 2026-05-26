@@ -1,10 +1,11 @@
 /**
- * Clase principal que conecta la vista con el modelo y gestiona el flujo de la aplicación.
+ * Clase principal que sirve para conectar el view con el model y gestiona el programa.
  */
+
 public class Controller {
 
     /**
-     * Método principal que arranca la aplicación.
+     * Método principal que inicia la aplicación.
      * @param args argumentos de la línea de comandos
      */
     public static void main(String[] args) {
@@ -31,11 +32,10 @@ public class Controller {
                     miView.muestraVelocidad(matricula, miModel.getVelocidad(matricula));
                 } else {
                     System.out.println("No existe ningun coche con esa matricula.");
-
                 }
 
             } else if (opcion == 3) {
-                // pedimos matrícula y metros, avanzamos y mostramos el total
+                // avanzamos metros, se descuenta gasolina, y mostramos el total
                 String matricula = miView.pedirMatricula();
                 if (miModel.getCoche(matricula) != null) {
                     int metros = miView.pedirMetros();
@@ -46,7 +46,7 @@ public class Controller {
                 }
 
             } else if (opcion == 4) {
-                // pedimos matrícula y litros, ponemos gasolina y mostramos el total
+                // cargamos litros y mostramos el total del depósito
                 String matricula = miView.pedirMatricula();
                 if (miModel.getCoche(matricula) != null) {
                     int litros = miView.pedirLitros();
@@ -57,10 +57,12 @@ public class Controller {
                 }
 
             } else if (opcion == 5) {
+                //opcion para salir del programa
                 salir = true;
                 System.out.println("Saliendo...");
 
             } else {
+                //muestra en pantalla un error de opción errónea
                 System.out.println("Opcion no valida.");
             }
         }

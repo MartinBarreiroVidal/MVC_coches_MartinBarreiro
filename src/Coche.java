@@ -11,7 +11,7 @@ public class Coche {
     /**
      * Constructor que crea un coche con velocidad, metros y gasolina en 0.
      * @param modelo modelo del coche
-     * @param matricula identificador único del coche
+     * @param matricula identificador del coche
      */
     public Coche(String modelo, String matricula) {
         this.modelo = modelo;
